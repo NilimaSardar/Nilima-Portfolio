@@ -38,7 +38,7 @@ const ContactSection = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin: 70px 0;
+  padding: 70px 0;
   gap: 10px;
 
   h1{

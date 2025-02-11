@@ -64,11 +64,11 @@ const AboutSection = styled.div`
   /* height: calc(100vh - 64.4px); */
   display: grid;
   place-items: center;
-  padding: 30px 100px;
+  padding: 20px 100px;
   letter-spacing: 1px;
 
   .about-section{
-      height: 100vh;
+      height: auto;
   }
 
   .about-section .about-intro{
@@ -86,8 +86,8 @@ const AboutSection = styled.div`
   .enhance{
     display: flex;
     justify-content: space-between;
-    padding: 0 100px;
-    margin-top: 20px;
+    padding: 0px;
+    margin-top: 10px;
 
   }
 

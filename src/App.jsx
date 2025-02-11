@@ -15,8 +15,17 @@ function App() {
     contact: useRef(null),
   };
 
+  // const scrollToSection = (section) => {
+  //   sectionsRef[section]?.current?.scrollIntoView({ behavior: 'smooth' });
+  // };
+
   const scrollToSection = (section) => {
-    sectionsRef[section]?.current?.scrollIntoView({ behavior: 'smooth' });
+    const element = sectionsRef[section]?.current;
+    if (element) {
+      const offset = 50;
+      const y = element.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   };
 
   return (
