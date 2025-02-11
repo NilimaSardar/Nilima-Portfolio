@@ -1,28 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Button from '../Home/Button';
 
-function Content({ heading, paragraph, items = [], images = [] }) {
-  const [currentImage, setCurrentImage] = useState(images[0]); // Start with the first image
-  const [imageIndex, setImageIndex] = useState(0);
-
-  // Cycle through the images using an interval
-  useEffect(() => {
-    if (images.length > 1) {
-      const interval = setInterval(() => {
-        setImageIndex((prevIndex) => (prevIndex + 1) % images.length); // Loop back to start
-      }, 3000); // Change every 3 seconds
-      return () => clearInterval(interval); // Clear interval on unmount
-    }
-  }, [images]);
-
-  // Update the current image when the index changes
-  useEffect(() => {
-    setCurrentImage(images[imageIndex]);
-  }, [imageIndex, images]);
-
+function Content({ heading, paragraph, items = [], image }) {
   return (
-    <ContentSection style={{ backgroundImage: `url(${currentImage})` }}>
+    <ContentSection style={{ backgroundImage: `url(${image})` }}>
       <div className="content">
         <h3>{heading}</h3>
         <p>{paragraph}</p>
@@ -46,14 +28,13 @@ export default Content;
 
 const ContentSection = styled.div`
   width: 100%;
-  height: 400px;
+  height: 250px;
   border-radius: 20px;
   background-size: cover;
   background-position: center;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   position: relative;
   margin: 30px 0;
-  transition: background-image 1s ease; /* Smooth transition between images */
 
   .content {
     padding: 10px;
@@ -68,19 +49,22 @@ const ContentSection = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     flex-direction: column;
     border-radius: 20px;
-    gap: 10px;
+    gap: 8px;
     opacity: 0;
     transition: 0.6s;
   }
 
   .content h3 {
-    font-size: 36px;
+    /* font-size: 36px; */
+    font-size: max(1vw, 28px);
   }
 
   .content p {
-    font-size: 18px;
+    /* font-size: 18px; */
+    font-size: max(1vw, 14px);
   }
 
   .content:hover {
@@ -98,26 +82,38 @@ const ContentSection = styled.div`
 
   .content .tool-used{
     white-space: wrap;
-
+    font-size: max(1vw, 12px);
+    width: 100%;
+    overflow: hidden;
   }
+
   .content .tool-used ul {
     list-style-type: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 100%;
   }
 
   .content .tool-used ul li {
-    flex-shrink: 1;
+    flex-shrink: 0;
     background-color: #bbb7b7;
     color: #ffffff;
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 15px;
+    text-align: center;
+    min-width: 60px; /* Prevents being too small */
+    max-width: 150px; /* Prevents being too large */
+    word-wrap: break-word;
+    font-size: max(1vw, 10px);
   }
 
   .content .button-used {
     display: flex;
     gap: 10px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
   }
 `;

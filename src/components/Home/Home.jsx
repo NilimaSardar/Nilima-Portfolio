@@ -12,7 +12,7 @@ function Home() {
                 <span>NILIMA</span>
                 <h2>Frontend Developer</h2>
                 <div className='button'>
-                  <Button color='color' text='Download CV' icon={<MdOutlineFileDownload fontSize='20px'/>}/>
+                  <Button color='color' text='Download CV' icon={<MdOutlineFileDownload fontSize='max(1.5vw, 13px)'/>}/>
                   <Button text='About Me'/>
                 </div>
             </div>
@@ -50,7 +50,7 @@ const HomePage = styled.div`
         letter-spacing: 5px;
       }
       .intro h2{
-        font-size: 65px;
+        font-size: max(4vw, 32px);
       }
       .intro .button{
         /* background-color: red; */

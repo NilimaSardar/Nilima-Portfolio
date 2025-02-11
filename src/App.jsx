@@ -2,10 +2,10 @@ import './App.css';
 import { useRef } from 'react';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
-import Projects from './components/Projects/Projects';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import Project from './components/Projects/Project';
 
 function App() {
   const sectionsRef = {
@@ -23,7 +23,7 @@ function App() {
     <>
       <Header scrollToSection={scrollToSection} />
       <div ref={sectionsRef.home}><Home /></div>
-      <div ref={sectionsRef.projects}><Projects /></div>
+      <div ref={sectionsRef.projects}><Project /></div>
       <div ref={sectionsRef.about}><About /></div>
       <div ref={sectionsRef.contact}><Contact /></div>
       <Footer />

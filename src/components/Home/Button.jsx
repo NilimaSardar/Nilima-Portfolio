@@ -14,7 +14,8 @@ export default Button
 const Button_part = styled.div`
     button{
         padding: 8px;
-        font-size: 18px;
+        /* font-size: 18px; */
+        font-size: max(1.5vw, 14px);
         border-radius: 20px;
         background-color: ${(props)=>props.color? '#72b572':'none'};
         cursor: pointer;
