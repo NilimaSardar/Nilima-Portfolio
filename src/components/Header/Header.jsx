@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom'
 import { FaBars } from "react-icons/fa6";
 
 
-function Header() {
+function Header({scrollToSection}) {
     const navLinkStyles = ({isActive}) =>{
         return{
             fontWeight: isActive ? 'bold' : 'normal',
@@ -18,16 +18,16 @@ function Header() {
         </div>
         <nav>
             <ul>
-                <NavLink style={navLinkStyles} to="/">
+                <NavLink onClick={() => scrollToSection('home')} style={navLinkStyles} to="/">
                     <li>Home</li>
                 </NavLink>
-                <NavLink style={navLinkStyles} to="/projects">
+                <NavLink onClick={() => scrollToSection('projects')} style={navLinkStyles} to="/projects">
                     <li>Projects</li>
                 </NavLink>
-                <NavLink style={navLinkStyles} to="/about">
+                <NavLink onClick={() => scrollToSection('about')} style={navLinkStyles} to="/about">
                     <li>About</li>
                 </NavLink>
-                <NavLink style={navLinkStyles} to="/contact">
+                <NavLink onClick={() => scrollToSection('contact')} style={navLinkStyles} to="/contact">
                     <li>Contact</li>
                 </NavLink>
             </ul>
@@ -43,6 +43,9 @@ export default Header
 
 
 const HeaderSec = styled.header`
+    width: 100%;
+    position: fixed;
+    z-index: 1;
     padding: 0 70px;
     background-color: #72b572;
     display: flex;

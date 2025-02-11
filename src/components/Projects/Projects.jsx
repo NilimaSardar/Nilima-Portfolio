@@ -31,30 +31,6 @@ function Projects() {
           '/public/Images/PetStore/PetStore_4.png'
         ]}
         />
-      <Content 
-        heading='Pet Store' 
-        paragraph='An onlne platform for managing pet,pet products and their accessories.'  
-        items ={ ['HTML', 'CSS', 'JavaScript', 'JQuery', 'PHP', 'MySQL']}
-        images={[
-          '/public/Images/PetStore/PetStore_1.png',
-          '/public/Images/PetStore/PetStore_2.png',
-          '/public/Images/PetStore/PetStore_3.png',
-          '/public/Images/PetStore/PetStore_4.png'
-        ]}
-        />
-        <Content 
-        heading='TypingTest' 
-        paragraph='A web based application to evaluate typing speed and accuracy.'  
-        items ={ ['HTML', 'CSS', 'JavaScript', 'JQuery', 'PHP', 'MySQL']}
-        images={[
-          '/public/Images/TypingTest/TypingTest_1.png',
-          '/public/Images/TypingTest/TypingTest_2.png',
-          '/public/Images/TypingTest/TypingTest_3.png',
-          '/public/Images/TypingTest/TypingTest_4.png',
-          '/public/Images/TypingTest/TypingTest_5.png'
-        ]}
-        backgroundImage="/public/Images/TypingTest/TypingTest_1.png'"
-        />
     </ProjectSection>
     </Section>
   )
