@@ -21,11 +21,11 @@ function Header({scrollToSection}) {
                 <NavLink onClick={() => scrollToSection('home')} style={navLinkStyles} to="/">
                     <li>Home</li>
                 </NavLink>
-                <NavLink onClick={() => scrollToSection('projects')} style={navLinkStyles} to="/projects">
-                    <li>Projects</li>
-                </NavLink>
                 <NavLink onClick={() => scrollToSection('about')} style={navLinkStyles} to="/about">
                     <li>About</li>
+                </NavLink>
+                <NavLink onClick={() => scrollToSection('projects')} style={navLinkStyles} to="/projects">
+                    <li>Projects</li>
                 </NavLink>
                 <NavLink onClick={() => scrollToSection('contact')} style={navLinkStyles} to="/contact">
                     <li>Contact</li>

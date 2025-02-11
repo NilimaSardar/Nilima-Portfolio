@@ -5,6 +5,8 @@ import { SiCss3 } from "react-icons/si";
 import { RiJavascriptFill } from "react-icons/ri";
 import { FaReact } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
+import { MdOutlineFileDownload } from "react-icons/md";
+import Button from '../Home/Button';
 
 function About() {
   return (
@@ -19,39 +21,58 @@ function About() {
               web applications. Eager to contribute to innovative teams and gain hands-on 
               industry experience.
             </p>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWxPddyIliLsYHygk-laKxRDBTP15BxsrcNg&s" alt="" />
+            <p>
+            Want to know more about my journey? You can download my CV by clicking the button below.
+            </p>
+            <Button color='color' text='Download CV' icon={<MdOutlineFileDownload fontSize='max(1.5vw, 13px)'/>}/>
           </div>
-            <div className='enhance'>
-            <div className='education'>
-              <h2>Education</h2>
-              <div className='education-more'>
-                <h3>SEE</h3>
-                <p>Star Secondary Boarding School</p>
-                <p>2005-2018</p>
-              </div>
-              <div className='education-more'>
-                <h3>+2 COMPUTER SCIENCE</h3>
-                <p>Kantipur Secondary School</p>
-                <p>2018-2020</p>
-              </div>
-              <div className='education-more'>
-                <h3>BACHELOR IN COMPUTER APPLICATION</h3>
-                <p>Himalaya Darshan College</p>
-                <p>2020-present</p>
-              </div>
-            </div>
 
             <div className='skills'>
-              <h2>SKILLS</h2>
+              <h2>TOOLS I USE</h2>
               <ul>
-                <li><SiHtml5 className='icon'/>HTML</li>
-                <li><SiCss3 className='icon'/>CSS</li>
-                <li><RiJavascriptFill className='icon'/>JavaScript</li>
-                <li><FaReact className='icon'/>ReactJS</li>
-                <li><FaGithubSquare className='icon'/>Version control(git & Github)</li>
+                <li>
+                  <div className='icon-div'>
+                    <SiHtml5 className='icon'/>
+                  </div>
+                  <div className="para">
+                    <p>HTML</p>
+                  </div>
+                </li>
+                <li>
+                  <div className="icon-div">
+                    <SiCss3 className='icon'/>
+                  </div>
+                  <div className="para">
+                    <p>CSS</p>
+                  </div>
+                </li>
+                <li>
+                  <div className="icon-div">
+                    <RiJavascriptFill className='icon'/>
+                  </div>
+                  <div className="para">
+                    <p>JavaScript</p>
+                  </div>
+                </li>
+                <li>
+                  <div className="icon-div">
+                    <FaReact className='icon'/>
+                  </div>
+                  <div className="para">
+                    <p>ReactJS</p>
+                  </div>
+                </li>
+                <li>
+                  <div className="icon-div">
+                    <FaGithubSquare className='icon'/>
+                  </div>
+                  <div className='para'>
+                    <p>(git&Github)</p>
+                  </div>
+                </li>
               </ul>
             </div>
-            </div>
+
         </div>
     </AboutSection>
   )
@@ -61,61 +82,75 @@ export default About
 
 const AboutSection = styled.div`
   width: 100%;
-  /* height: calc(100vh - 64.4px); */
-  display: grid;
-  place-items: center;
   padding: 20px 100px;
   letter-spacing: 1px;
 
   .about-section{
       height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
   }
 
   .about-section .about-intro{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 50px 0;
+    gap: 20px;
   }
   .about-section p{
-    width: 50%;
+    width: 80%;
     text-align: justify;
-  }
-  .about-section img{
-    width: 40%;
-  }
-
-  .enhance{
-    display: flex;
-    justify-content: space-between;
-    padding: 0px;
-    margin-top: 10px;
-
-  }
-
-  .enhance h2{
-    letter-spacing: 2px;
-  }
-
-  .education{
-    padding: 20px;
-    /* background-color: red; */
-    width: 50%;
   }
 
   .skills{
-    padding: 20px;
-    /* background-color: green; */
-    width: 50%;
+    width: 100%;
+  }
+
+  .skills h2{
+    display: flex;
+    justify-content: center;
   }
 
   .skills ul{
+    display: flex;
+    justify-content: space-around;
     list-style-type: none;
     font-size: 20px;
     font-weight: 500;
-    margin: 10px 10px;
+    padding: 20px;
+    /* background-color: blue; */
   }
 
-  .skills ul .icon{
+  .skills ul li{
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .skills ul li .icon-div{
+    background-color: #72b572;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 5px;
+    font-size: 60px;
+    color: #3a3a3a;
+
+  }
+
+  .skills ul li .para{
+    color: #828282;
+    /* background-color: grey; */
   }
 
 `;

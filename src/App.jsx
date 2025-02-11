@@ -32,8 +32,8 @@ function App() {
     <>
       <Header scrollToSection={scrollToSection} />
       <div ref={sectionsRef.home}><Home /></div>
-      <div ref={sectionsRef.projects}><Project /></div>
       <div ref={sectionsRef.about}><About /></div>
+      <div ref={sectionsRef.projects}><Project /></div>
       <div ref={sectionsRef.contact}><Contact /></div>
       <Footer />
     </>
