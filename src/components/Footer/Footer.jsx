@@ -13,13 +13,8 @@ import { BsSend } from "react-icons/bs";
 function Footer() {
   return (
     <FooterPage>
-      <div className='social'>
-          <div className='social-intro'>
-              <h1>Get In Touch</h1>
-              <p>Have a project you'd like to discuss? Just leave a message and I'll get back to you within 24 hours.</p>
-              <Button icon={<BsSend fontSize='16px'/>} color='color' text='Send Details'/>
-          </div>
-          <div className='social-media'>
+      <div className='right'>
+        <div className='social-media'>
             <h5>Social Links</h5>
             <ul>
               <Link to='/'><li><FaFacebook/></li></Link>
@@ -29,8 +24,6 @@ function Footer() {
               <Link to='/'><li><MdEmail/></li></Link>
             </ul>
           </div>
-      </div>
-      <div className='right'>
         <p>Created with ReactJS <FaReact fontSize='18px'/> by <span>NILIMA</span></p>
 
       </div>
@@ -43,21 +36,7 @@ export default Footer
 const FooterPage = styled.div`
   width: 100%;
 
-  .social{
-    background-color: #bbb7b7;
-    height: 250px;
-    display: flex;
-    padding: 0 100px;
-    gap: 30px;
-  }
-  .social .social-intro{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-  }
-  .social .social-media{
+  .social-media{
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -66,6 +45,7 @@ const FooterPage = styled.div`
   }
   .social-media h5{
     font-size: 30px;
+    color: #4a4444d9;
   }
   .social-media ul{
     display: flex;
@@ -74,13 +54,13 @@ const FooterPage = styled.div`
   }
   .social-media ul li{
     font-size: 28px;
-    color: #735a5a;
+    color: #43363695;
   }
 
   .right{
-    background-color: #5e5d5d;
-    color: #bbb7b7;
-    height: 80px;
+    background-color: #757272a8;
+    color: #5e5d5daf;
+    height: 180px;
     font-size: 18px;
     font-weight: 500;
     display: flex;
@@ -90,6 +70,20 @@ const FooterPage = styled.div`
   }
   .right span{
     font-weight: 600;
+    color: #4a4444d0;
+    letter-spacing: 1px;
+    /* font-size: 20px; */
   }
+
+  @media (max-width: 768px) {
+          .social {
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              padding: 30px 0 0 0; /* Reduce padding for better spacing */
+              height: auto; /* Adjust height to fit content */
+          }
+
+      }
 
 `;

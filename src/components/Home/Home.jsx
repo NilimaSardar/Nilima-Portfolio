@@ -53,7 +53,7 @@ const HomePage = styled.div`
         justify-content: space-around;
         align-items: center;
         /* background-color: red; */
-        padding: 150px;
+        padding: 200px 150px 150px 150px;
         height: calc(100vh - 80px);
 
       }
