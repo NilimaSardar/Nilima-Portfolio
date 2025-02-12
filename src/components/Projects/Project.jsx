@@ -5,7 +5,7 @@ import Content from './Content';
 function Projects() {
   return (
     <Section>
-    <h1>Here's my Projects</h1>
+    <h1>&lt;Projects/&gt;</h1>
     <ProjectSection>
       <Content 
         heading='TypingTest' 
@@ -14,7 +14,6 @@ function Projects() {
         image={
           '/public/Images/TypingTest/TypingTest_1.png'
         }
-        backgroundImage="/public/Images/TypingTest/TypingTest_1.png'"
         />
       <Content 
         heading='Pet Store' 
@@ -39,10 +38,10 @@ const Section = styled.div`
   justify-content: center;
   align-items: center;
   
-  h1{
+  /* h1{
     font-size: max(2vw, 24px);
     font-weight: 600;
-  }
+  } */
 
 `;
 

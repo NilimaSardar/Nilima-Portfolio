@@ -12,7 +12,7 @@ function About() {
   return (
     <AboutSection>
         <div className='about-section'>
-          <h1>About ME</h1>
+          <h1>&lt;About ME/&gt;</h1>
           <div className='about-intro'>
             <p>
               I am BCA student seeking an internship to apply and enhance technical
@@ -22,9 +22,11 @@ function About() {
               industry experience.
             </p>
             <p>
-            Want to know more about my journey? You can download my CV by clicking the button below.
+            Want to know more about my journey? You can download my Resume by clicking the button below.
             </p>
-            <Button color='color' text='Download CV' icon={<MdOutlineFileDownload fontSize='max(1.5vw, 13px)'/>}/>
+            <div className='button'>
+              <Button color='color' text='Resume'/>
+            </div>
           </div>
 
             <div className='skills'>
@@ -82,7 +84,7 @@ export default About
 
 const AboutSection = styled.div`
   width: 100%;
-  padding: 20px 100px;
+  padding: 60px 100px 40px 100px;
   letter-spacing: 1px;
 
   .about-section{
@@ -106,8 +108,14 @@ const AboutSection = styled.div`
     text-align: justify;
   }
 
+  .about-section .button{
+    width: 100%;
+    padding-left: 130px;
+  }
+
   .skills{
     width: 100%;
+    padding: 20px;
   }
 
   .skills h2{
@@ -122,11 +130,13 @@ const AboutSection = styled.div`
     font-size: 20px;
     font-weight: 500;
     padding: 20px;
+    flex-wrap: wrap;
     /* background-color: blue; */
   }
 
   .skills ul li{
-    height: 170px;
+    max-height: 170px;
+    /* height: max(1vw, 50px); */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -152,5 +162,38 @@ const AboutSection = styled.div`
     color: #828282;
     /* background-color: grey; */
   }
+
+  @media (max-width: 768px) {
+         padding: 0;
+
+         .about-section{
+          padding: 20px 0;
+         }
+
+         .about-section .button{
+          padding-left: 70px;
+        }
+
+        /* Responsive Design */
+        .skills ul {
+        justify-content: center; /* Keep items centered */
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .skills ul li {
+        max-height: none; /* Allow flexible height */
+    }
+
+    .skills ul li .icon-div {
+        height: 80px;
+        width: 80px;
+        font-size: 50px; /* Adjust icon size */
+    }
+
+    .skills ul li .para {
+        font-size: 16px; /* Adjust text size */
+    }
+      }
 
 `;

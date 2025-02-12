@@ -1,30 +1,30 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from '../Home/Button';
 
 function Contact() {
   return (
     <ContactSection>
-      <h1>Contact Me</h1>
+      <h1>&lt;Contact ME/&gt;</h1>
       <p>
-        If you want to work with me please fill the form below
-        and I'll get back to you within 24 hours.
+        Feel free to send me a message!.
       </p>
       <form action="">
         <div className='input-field'>
           <label htmlFor="name">NAME</label>
-          <input type="text" id="name" placeholder='Nilima Saradr'/>
+          <input type="text" id="name" placeholder='name'/>
         </div>
         <div className='input-field'>
           <label htmlFor="email">E-MAIL</label>
-          <input type="email" id="email" placeholder='nilima@gmail.com'/>
+          <input type="email" id="email" placeholder='e-mail'/>
         </div>
         <div className='input-field textarea'>
           <label htmlFor="textarea">HOW CAN I HELP?</label>
-          <textarea id="textarea" name="textarea" rows="20" cols="50" placeholder="We run a small startup and we want a website for the same.."></textarea>
+          <textarea id="textarea" name="textarea" rows="20" cols="50" placeholder="message..."></textarea>
         </div>
+        <Button_part>
+        <button type='submit'>Send</button>
+      </Button_part>
       </form>
-      <Button text="SUBMIT" color="color"/>
     </ContactSection>
   )
 }
@@ -43,6 +43,11 @@ const ContactSection = styled.div`
 
   h1{
     margin-bottom: 10px;
+  }
+  p{
+    text-align: center;
+    font-size: 22px;
+    padding: 0px 70px;
   }
 
   form{
@@ -96,4 +101,32 @@ textarea:focus{
   outline: none;
 }
 
+@media (max-width: 768px) {
+  padding: 70px 30px;
+  .input-field{
+    width: 100%;
+  }
+}
+
+`;
+
+const Button_part = styled.div`
+    button{
+        padding: 8px 30px;
+        /* font-size: 18px; */
+        font-size: max(1.3vw, 20px);
+        border-radius: 18px;
+        background-color: #72b57281;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    button:hover{
+      background-color: #72b572;
+    }
+
+    @media (max-width: 768px) {
+        align-items: left;
+        width: 100%;
+        padding: 8px 20px;
+    }
 `;

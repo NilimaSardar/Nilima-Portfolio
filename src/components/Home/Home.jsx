@@ -11,7 +11,7 @@ function Home() {
     <HomePage>
         <div className='main-section'>
             <div className='intro'>
-                <h1>&lt; Nilima <br /> Sardar /&gt;</h1>
+                <h1>&lt; Nilima <br /> &nbsp;&nbsp;&nbsp; Sardar /&gt;</h1>
                 <span>Frontend Developer</span>
                 <ul>
                   <Link to='/'><li><FaGithub/></li></Link>
@@ -48,7 +48,7 @@ export default Home
 const HomePage = styled.div`
 
       .main-section{
-        font-size: 35px;
+        /* font-size: 35px; */
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -58,7 +58,7 @@ const HomePage = styled.div`
 
       }
       .intro{
-        line-height: 50px;
+        line-height: max(4vw, 35px);
         padding: 100px 0;
       }
       .intro ul{
@@ -78,15 +78,19 @@ const HomePage = styled.div`
       }
       
       .intro span{
+        padding-left: 10px;
+        font-size: max(1.5vw, 12px);
+        /* font-size: 20px; */
         font-weight: 700;
         letter-spacing: 5px;
       }
       .intro h1{
-        font-size: max(4vw, 32px);
+        font-size: max(4vw, 38px);
       }
 
       .image{
-        width: 45%;
+        min-width: 350px;
+        width: 40%;
         height: auto;
       }
       .image img{
@@ -125,5 +129,18 @@ const HomePage = styled.div`
           50% {
               transform: translateY(-10px);
           }
+      }
+
+
+      @media (max-width: 768px) {
+          .main-section {
+              flex-direction: column-reverse;
+              padding: 30px 0 0 0; /* Reduce padding for better spacing */
+              height: auto; /* Adjust height to fit content */
+          }
+          .intro{
+              line-height: max(4vw, 35px);
+              padding: 20px 0 50px 0px;
+            }
       }
 `;
