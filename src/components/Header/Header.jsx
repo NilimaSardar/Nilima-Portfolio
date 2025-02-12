@@ -11,18 +11,15 @@ function Header({ scrollToSection }) {
         setIsMenuOpen(!isMenuOpen);
     
         if (!isMenuOpen) {
-            document.body.style.overflow = "hidden"; // Disable scrolling
-            document.body.style.backdropFilter = "blur(5px)"; // Apply blur
+            document.body.style.overflow = "hidden";
         } else {
-            document.body.style.overflow = "auto"; // Enable scrolling
-            document.body.style.backdropFilter = "none"; // Remove blur
+            document.body.style.overflow = "auto";
         }
     };
     
     const closeMenu = () => {
         setIsMenuOpen(false);
-        document.body.style.overflow = "auto"; // Restore scrolling
-        document.body.style.backdropFilter = "none"; // Remove blur
+        document.body.style.overflow = "auto";
     };
 
     const navLinkStyles = ({ isActive }) => ({
