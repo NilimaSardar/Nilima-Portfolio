@@ -8,7 +8,6 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { FaReact } from "react-icons/fa";
-import { BsSend } from "react-icons/bs";
 
 function Footer() {
   return (
@@ -24,8 +23,7 @@ function Footer() {
               <Link to='/'><li><MdEmail/></li></Link>
             </ul>
           </div>
-        <p>Created with ReactJS <FaReact fontSize='18px'/> by <span>NILIMA</span></p>
-
+        <p>Created with ReactJS <FaReact fontSize='20px'/> by <span>NILIMA</span></p>
       </div>
     </FooterPage>
   )

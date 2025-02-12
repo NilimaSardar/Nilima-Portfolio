@@ -12,7 +12,7 @@ function Projects() {
         paragraph='A web based application to evaluate typing speed and accuracy.'  
         items ={ ['HTML', 'CSS', 'JavaScript', 'JQuery', 'PHP', 'MySQL']}
         image={
-          '/public/Images/TypingTest/TypingTest_1.png'
+          '/Images/TypingTest/TypingTest_1.png'
         }
         />
       <Content 
@@ -20,7 +20,7 @@ function Projects() {
         paragraph='An onlne platform for managing pet,pet products and their accessories.'  
         items ={ ['HTML', 'CSS', 'JavaScript', 'JQuery', 'PHP', 'MySQL']}
         image={
-          '/public/Images/PetStore/PetStore_1.png'
+          '/Images/PetStore/PetStore_1.png'
         }
         />
     </ProjectSection>
