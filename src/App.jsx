@@ -15,10 +15,6 @@ function App() {
     contact: useRef(null),
   };
 
-  // const scrollToSection = (section) => {
-  //   sectionsRef[section]?.current?.scrollIntoView({ behavior: 'smooth' });
-  // };
-
   const scrollToSection = (section) => {
     const element = sectionsRef[section]?.current;
     if (element) {

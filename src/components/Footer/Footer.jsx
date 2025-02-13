@@ -1,87 +1,71 @@
-import React from 'react'
-import styled from 'styled-components'
-import Button from '../Home/Button';
-import {Link} from 'react-router-dom'
-import { FaGithub } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
+import React, { useEffect, useState } from 'react'
+import styled from 'styled-components';
 import { FaReact } from "react-icons/fa";
 
 function Footer() {
+  const [quote, setQuote] = useState("");
+
+    const quotes = [
+      "Code is like humor. When you have to explain it, it’s bad. – Cory House",
+      "Programming isn’t about what you know; it’s about what you can figure out. – Chris Pine",
+      "The best way to get a project done faster is to start sooner. – Jim Highsmith",
+      "Any fool can write code that a computer can understand. Good programmers write code that humans can understand. – Martin Fowler",
+    ];
+
+  useEffect(()=>{
+    setQuote(quotes[Math.floor(Math.random() * quotes.length)])
+  },[]);
+
   return (
     <FooterPage>
-      <div className='right'>
-        <div className='social-media'>
-            <h5>Social Links</h5>
-            <ul>
-              <Link to='/'><li><FaFacebook/></li></Link>
-              <Link to='/'><li><FaSquareInstagram/></li></Link>
-              <Link to='/'><li><FaGithub/></li></Link>
-              <Link to='/'><li><FaLinkedin/></li></Link>
-              <Link to='/'><li><MdEmail/></li></Link>
-            </ul>
+        <div className='quote-section'>
+            <h5>Quote of the day</h5>
+            <p>"{quote}"</p>
           </div>
         <p>Created with ReactJS <FaReact fontSize='20px'/> by <span>NILIMA</span></p>
-      </div>
     </FooterPage>
   )
 }
 
-export default Footer
+export default Footer;
 
 const FooterPage = styled.div`
-  width: 100%;
-
-  .social-media{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .social-media h5{
-    font-size: 30px;
-    color: #4a4444d9;
-  }
-  .social-media ul{
-    display: flex;
-    list-style-type: none;
-    gap: 10px;
-  }
-  .social-media ul li{
-    font-size: 28px;
-    color: #43363695;
-  }
-
-  .right{
+    width: 100%;
     background-color: #757272a8;
-    color: #5e5d5daf;
-    height: 180px;
+    color: #555454da;
+    height: 170px;
     font-size: 18px;
     font-weight: 500;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+
+  .quote-section{
+    width: 70%;
+    padding: 2px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  .right span{
+  .quote-section h5{
+    font-family: "Roboto";
+    font-size: 30px;
+    color: #4a4444d9;
+  }
+  .quote-section p{
+    font-family: "Roboto";
+    font-size: 20px;
+    color: #f1ebebe6;
+  }
+
+  span{
     font-weight: 600;
     color: #4a4444d0;
     letter-spacing: 1px;
-    /* font-size: 20px; */
   }
-
-  @media (max-width: 768px) {
-          .social {
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-              padding: 30px 0 0 0; /* Reduce padding for better spacing */
-              height: auto; /* Adjust height to fit content */
-          }
-
-      }
 
 `;

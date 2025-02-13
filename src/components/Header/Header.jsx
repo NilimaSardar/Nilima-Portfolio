@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 import { FaBars } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 
@@ -22,31 +21,17 @@ function Header({ scrollToSection }) {
         document.body.style.overflow = "auto";
     };
 
-    const navLinkStyles = ({ isActive }) => ({
-        fontWeight: isActive ? 'bold' : 'normal',
-        textDecoration: 'none',
-    });
-
     return (
         <HeaderSec>
             <div className='header'>
                 <div className='logo'>
-                    <p>N..</p>
+                    <p onClick={() => scrollToSection('home')}>N..</p>
                 </div>
                 <nav>
                     <ul className='pc'>
-                        <NavLink onClick={() => scrollToSection('home')} style={navLinkStyles} to="/">
-                            <li>Home</li>
-                        </NavLink>
-                        <NavLink onClick={() => scrollToSection('about')} style={navLinkStyles} to="/about">
-                            <li>About</li>
-                        </NavLink>
-                        <NavLink onClick={() => scrollToSection('projects')} style={navLinkStyles} to="/projects">
-                            <li>Projects</li>
-                        </NavLink>
-                        <NavLink onClick={() => scrollToSection('contact')} style={navLinkStyles} to="/contact">
-                            <li>Contact</li>
-                        </NavLink>
+                        <li onClick={() => scrollToSection('about')}>About</li>
+                        <li onClick={() => scrollToSection('projects')}>Projects</li>
+                        <li onClick={() => scrollToSection('contact')}>Contact</li>
                     </ul>
                     <div className='mbl' onClick={toggleMenu}>
                         <FaBars />
@@ -61,18 +46,9 @@ function Header({ scrollToSection }) {
                         <RxCross2 className='icon' />
                     </div>
                     <ul className='mbl-menu'>
-                        <NavLink onClick={() => { scrollToSection('home'); closeMenu(); }} style={navLinkStyles} to="/">
-                            <li>Home</li>
-                        </NavLink>
-                        <NavLink onClick={() => { scrollToSection('about'); closeMenu(); }} style={navLinkStyles} to="/about">
-                            <li>About</li>
-                        </NavLink>
-                        <NavLink onClick={() => { scrollToSection('projects'); closeMenu(); }} style={navLinkStyles} to="/projects">
-                            <li>Projects</li>
-                        </NavLink>
-                        <NavLink onClick={() => { scrollToSection('contact'); closeMenu(); }} style={navLinkStyles} to="/contact">
-                            <li>Contact</li>
-                        </NavLink>
+                        <li onClick={() => { scrollToSection('about'); closeMenu();}}>About</li>
+                        <li onClick={() => { scrollToSection('projects'); closeMenu();}}>Projects</li>
+                        <li onClick={() => { scrollToSection('contact'); closeMenu();}}>Contact</li>
                     </ul>
                 </div>
             </div>
@@ -102,6 +78,7 @@ const HeaderSec = styled.header`
         letter-spacing: 2px;
         padding: 5px;
         font-family: "Caveat";
+        cursor: pointer;
     }
 
     nav .pc{
@@ -111,6 +88,7 @@ const HeaderSec = styled.header`
         gap: 20px;
         font-size: 20px;
         font-weight: 500;
+        cursor: pointer;
     }
     nav ul li{
         text-decoration: none;
@@ -179,6 +157,7 @@ const HeaderSec = styled.header`
         text-decoration: none;
         font-size: 22px;
         color: #e7d8d8;
+        cursor: pointer;
     }
 
 

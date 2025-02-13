@@ -4,7 +4,6 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaAngleDown } from "react-icons/fa";
-import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -14,20 +13,17 @@ function Home() {
                 <h1>&lt; Nilima <br /> &nbsp;&nbsp;&nbsp; Sardar /&gt;</h1>
                 <span>Frontend Developer</span>
                 <ul>
-                  <Link to='/'><li><FaGithub/></li></Link>
-                  <Link to='/'><li><FaLinkedin/></li></Link>
-                  <Link to='/'><li><FaSquareInstagram/></li></Link>
+                  <a href="https://github.com/NilimaSardar" target="_blank" rel="noopener noreferrer">
+                    <li><FaGithub/></li>
+                  </a>
+                  <a href="https://www.linkedin.com/in/nilima-sardar-8416b0283" target="_blank" rel="noopener noreferrer">
+                    <li><FaLinkedin/></li>
+                  </a>
+                  <a href="https://www.instagram.com/______nilima____?igsh=djMzaTE4cHBqMzU0" target="_blank" rel="noopener noreferrer">
+                    <li><FaSquareInstagram/></li>
+                  </a>
                 </ul>
             </div>
-            {/* <div className='intro'>
-                <h1>Hi! I'm </h1>
-                <span>NILIMA</span>
-                <h2>Frontend Developer</h2>
-                <div className='button'>
-                  <Button color='color' text='Download CV' icon={<MdOutlineFileDownload fontSize='max(1.5vw, 13px)'/>}/>
-                  <Button text='About Me'/>
-                </div>
-            </div> */}
             
             <div className='image'>
                 <img src="https://static.vecteezy.com/system/resources/previews/010/865/005/non_2x/continuous-line-drawing-woman-sitting-holding-laptop-vector.jpg" alt="" />
@@ -48,11 +44,9 @@ export default Home
 const HomePage = styled.div`
 
       .main-section{
-        /* font-size: 35px; */
         display: flex;
         justify-content: space-around;
         align-items: center;
-        /* background-color: red; */
         padding: 200px 150px 150px 150px;
         height: calc(100vh - 80px);
 
@@ -141,6 +135,10 @@ const HomePage = styled.div`
           .intro{
               line-height: max(4vw, 35px);
               padding: 20px 0 50px 0px;
+          }
+
+            .intro ul{
+              padding-left: 50px;
             }
       }
 `;
