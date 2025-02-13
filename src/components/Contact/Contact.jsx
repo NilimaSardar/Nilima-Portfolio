@@ -1,96 +1,113 @@
-import React, { useState } from 'react'
-import emailjs from '@emailjs/browser';
-import styled from 'styled-components'
-import axios from 'axios';
+import React from "react";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import styled from "styled-components";
 
 function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm({ mode: "onChange" });
 
-  const handleSubmit = async(event) =>{
-    event.preventDefault();
-
-    //EmailJS serviceID, temlateID and Public key
+  const onSubmit = async (data) => {
     const serviceId = import.meta.env.VITE_SERVICE_ID;
     const templateId = import.meta.env.VITE_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 
-    const data = {
+    const emailData = {
       service_id: serviceId,
       template_id: templateId,
       user_id: publicKey,
       template_params: {
-        from_name: name,
-        from_email: email,
-        to_name: 'Nilima',
-        message: message,
-      }
+        from_name: data.name,
+        from_email: data.email,
+        to_name: "Nilima",
+        message: data.message,
+      },
     };
 
-    //send the mail using Emails
-    try{
-      const res = await axios.post(import.meta.env.VITE_API_URL, data);
-      console.log(res.data);
-      setName('');
-      setEmail('');
-      setMessage('');
+    try {
+      const res = await axios.post(import.meta.env.VITE_API_URL, emailData);
+      console.log("Email Sent:", res.data);
+      reset(); // Reset form on successful submission
+    } catch (error) {
+      console.error("Error sending email:", error);
     }
-    catch(error){
-      console.error('Error sending email:', error);   
-    }
-
-
-  }
+  };
 
   return (
     <ContactSection>
       <h1>&lt;Contact ME/&gt;</h1>
-      <p>
-        Feel free to send me a message!.
-      </p>
-      <form onSubmit={handleSubmit}>
-        <div className='input-field'>
+      <p>Feel free to send me a message!</p>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="input-field">
           <label htmlFor="name">NAME</label>
-          <input 
-            type="text" 
-            id="name" 
-            placeholder='name'
-            value={name}
-            onChange={(e)=> setName(e.target.value)}
-            />
+          <input
+            type="text"
+            id="name"
+            autoComplete="off" 
+            placeholder="Enter your name"
+            {...register("name", {
+              required: "required*",
+              pattern: {
+                value: /^[A-Za-z ]+$/,
+                message: "Only letters & spaces allowed",
+              },
+            })}
+          />
+          {errors.name && <p className="error-msg">{errors.name.message}</p>}
         </div>
-        <div className='input-field'>
+
+        <div className="input-field">
           <label htmlFor="email">E-MAIL</label>
-          <input 
-            type="email" 
-            id="email" 
-            placeholder='e-mail'
-            value={email}
-            onChange={(e)=> setEmail(e.target.value)}
-            />
+          <input
+            type="email"
+            id="email"
+            autoComplete="off" 
+            placeholder="Enter your email"
+            {...register("email", {
+              required: "required*",
+              pattern: {
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                message: "Invalid email!",
+              },
+            })}
+          />
+          {errors.email && <p className="error-msg">{errors.email.message}</p>}
         </div>
-        <div className='input-field textarea'>
-          <label htmlFor="textarea">HOW CAN I HELP?</label>
-          <textarea 
-            id="textarea" 
-            name="textarea" 
-            rows="20" 
-            cols="50" 
-            placeholder="message..."
-            value={message}
-            onChange={(e)=> setMessage(e.target.value)}
-            ></textarea>
+
+        <div className="input-field textarea">
+          <label htmlFor="message">HOW CAN I HELP?</label>
+          <textarea
+            id="message"
+            autoComplete="off" 
+            placeholder="Enter your message..."
+            rows="4"
+            {...register("message", {
+              required: "required*",
+              pattern: {
+                message: "",
+              },
+            })}
+          ></textarea>
+          {errors.message && (
+            <p className="error-msg">{errors.message.message}</p>
+          )}
         </div>
+
         <Button_part>
-        <button type='submit'>Send</button>
-      </Button_part>
+          <button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? "Sending..." : "Send"}
+          </button>
+        </Button_part>
       </form>
     </ContactSection>
-  )
+  );
 }
 
-export default Contact
+export default Contact;
 
 
 const ContactSection = styled.div`
@@ -124,6 +141,14 @@ const ContactSection = styled.div`
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
+    position: relative;
+  }
+
+  .input-field .error-msg{
+    position: absolute;
+    color: red;
+    right: -40px;
+    font-size: 14px;
   }
 
   .textarea{
