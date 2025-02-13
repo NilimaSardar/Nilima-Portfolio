@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 function Contact() {
+  // const [formState, setFormState] = useState({});
+
+  // const changeHandler = (event) =>{
+  //   setFormState({...formState, [event.target.name]})
+  // }
+
   return (
     <ContactSection>
       <h1>&lt;Contact ME/&gt;</h1>
@@ -11,15 +17,35 @@ function Contact() {
       <form action="">
         <div className='input-field'>
           <label htmlFor="name">NAME</label>
-          <input type="text" id="name" placeholder='name'/>
+          <input 
+            type="text" 
+            id="name" 
+            placeholder='name'
+            value=""
+            // onChange={changeHandler}
+            />
         </div>
         <div className='input-field'>
           <label htmlFor="email">E-MAIL</label>
-          <input type="email" id="email" placeholder='e-mail'/>
+          <input 
+            type="email" 
+            id="email" 
+            placeholder='e-mail'
+            value=""
+            // onChange={changeHandler}
+            />
         </div>
         <div className='input-field textarea'>
           <label htmlFor="textarea">HOW CAN I HELP?</label>
-          <textarea id="textarea" name="textarea" rows="20" cols="50" placeholder="message..."></textarea>
+          <textarea 
+            id="textarea" 
+            name="textarea" 
+            rows="20" 
+            cols="50" 
+            placeholder="message..."
+            value=""
+            // onChange={changeHandler}
+            ></textarea>
         </div>
         <Button_part>
         <button type='submit'>Send</button>

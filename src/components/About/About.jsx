@@ -24,9 +24,9 @@ function About() {
             <p>
             Want to know more about my journey? You can download my Resume by clicking the button below.
             </p>
-            <div className='button'>
-              <Button color='color' text='Resume'/>
-            </div>
+            <Button_part>
+              <button>Resume</button>
+            </Button_part>
           </div>
 
             <div className='skills'>
@@ -108,11 +108,6 @@ const AboutSection = styled.div`
     text-align: justify;
   }
 
-  .about-section .button{
-    width: 100%;
-    padding-left: 130px;
-  }
-
   .skills{
     width: 100%;
     padding: 20px;
@@ -170,10 +165,6 @@ const AboutSection = styled.div`
           padding: 20px 0;
          }
 
-         .about-section .button{
-          padding-left: 70px;
-        }
-
         /* Responsive Design */
         .skills ul {
         justify-content: center; /* Keep items centered */
@@ -188,7 +179,7 @@ const AboutSection = styled.div`
     .skills ul li .icon-div {
         height: 80px;
         width: 80px;
-        font-size: 50px; /* Adjust icon size */
+        font-size: 45px; /* Adjust icon size */
     }
 
     .skills ul li .para {
@@ -196,4 +187,36 @@ const AboutSection = styled.div`
     }
       }
 
+`;
+
+
+const Button_part = styled.div`
+    width: 100%;
+    padding: 0 0 0 130px;
+
+
+    button{
+        padding: 5px 12px;
+        /* font-size: 18px; */
+        font-size: max(1.3vw, 20px);
+        border-radius: 18px;
+        border: 2px solid #72b572;
+        color: #72b572;
+        /* background-color: #72b57281; */
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    button:hover{
+      background-color: #72b572;
+      color: black;
+      /* border: 1px solid black; */
+    }
+
+    @media (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+    }
 `;

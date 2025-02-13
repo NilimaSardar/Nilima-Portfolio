@@ -5,7 +5,7 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaAngleDown } from "react-icons/fa";
 
-function Home() {
+function Home({ scrollToSection }) {
   return (
     <HomePage>
         <div className='main-section'>
@@ -31,7 +31,7 @@ function Home() {
         </div>
         
         <div className="down">
-          <div className="down-icon">
+          <div className="down-icon" onClick={() => scrollToSection('about')}>
             <FaAngleDown/>
           </div>    
         </div>
