@@ -102,13 +102,13 @@ const ContentSection = styled.div`
     flex-shrink: 0;
     background-color: #bbb7b7;
     color: #ffffff;
-    padding: 5px 10px;
+    padding: 5px 8px;
     border-radius: 15px;
     text-align: center;
     min-width: 60px; /* Prevents being too small */
     max-width: 150px; /* Prevents being too large */
     word-wrap: break-word;
-    font-size: max(1vw, 10px);
+    font-size: max(1vw, 14px);
   }
 
   .content .button-used {

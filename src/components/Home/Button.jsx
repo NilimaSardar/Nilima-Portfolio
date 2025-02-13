@@ -15,13 +15,14 @@ const Button_part = styled.div`
     button{
         padding: 8px;
         /* font-size: 18px; */
-        font-size: max(1.3vw, 14px);
+        font-size: max(0.8vw, 14px);
         border-radius: 20px;
-        background-color: ${(props)=>props.color? '#72b57281':'none'};
+        background-color: ${(props)=>props.color? '#b4e98cd2':'none'};
         cursor: pointer;
         transition: 0.3s;
     }
     button:hover{
       background-color: #72b572;
+      color: black;
     }
 `;
