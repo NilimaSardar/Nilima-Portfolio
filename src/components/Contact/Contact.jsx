@@ -1,12 +1,47 @@
 import React, { useState } from 'react'
+import emailjs from '@emailjs/browser';
 import styled from 'styled-components'
+import axios from 'axios';
 
 function Contact() {
-  // const [formState, setFormState] = useState({});
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-  // const changeHandler = (event) =>{
-  //   setFormState({...formState, [event.target.name]})
-  // }
+  const handleSubmit = async(event) =>{
+    event.preventDefault();
+
+    //EmailJS serviceID, temlateID and Public key
+    const serviceId = import.meta.env.VITE_SERVICE_ID;
+    const templateId = import.meta.env.VITE_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_PUBLIC_KEY;
+
+    const data = {
+      service_id: serviceId,
+      template_id: templateId,
+      user_id: publicKey,
+      template_params: {
+        from_name: name,
+        from_email: email,
+        to_name: 'Nilima',
+        message: message,
+      }
+    };
+
+    //send the mail using Emails
+    try{
+      const res = await axios.post(import.meta.env.VITE_API_URL, data);
+      console.log(res.data);
+      setName('');
+      setEmail('');
+      setMessage('');
+    }
+    catch(error){
+      console.error('Error sending email:', error);   
+    }
+
+
+  }
 
   return (
     <ContactSection>
@@ -14,15 +49,15 @@ function Contact() {
       <p>
         Feel free to send me a message!.
       </p>
-      <form action="">
+      <form onSubmit={handleSubmit}>
         <div className='input-field'>
           <label htmlFor="name">NAME</label>
           <input 
             type="text" 
             id="name" 
             placeholder='name'
-            value=""
-            // onChange={changeHandler}
+            value={name}
+            onChange={(e)=> setName(e.target.value)}
             />
         </div>
         <div className='input-field'>
@@ -31,8 +66,8 @@ function Contact() {
             type="email" 
             id="email" 
             placeholder='e-mail'
-            value=""
-            // onChange={changeHandler}
+            value={email}
+            onChange={(e)=> setEmail(e.target.value)}
             />
         </div>
         <div className='input-field textarea'>
@@ -43,8 +78,8 @@ function Contact() {
             rows="20" 
             cols="50" 
             placeholder="message..."
-            value=""
-            // onChange={changeHandler}
+            value={message}
+            onChange={(e)=> setMessage(e.target.value)}
             ></textarea>
         </div>
         <Button_part>
