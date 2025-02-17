@@ -194,6 +194,13 @@ textarea:focus{
   }
 }
 
+@media (max-width: 360px) or (max-height: 740px) {
+    p{
+      width: 100%;
+      font-size: 18px;
+    }
+  }
+
 `;
 
 const Button_part = styled.div`

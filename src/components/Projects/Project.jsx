@@ -37,11 +37,6 @@ const Section = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
-  /* h1{
-    font-size: max(2vw, 24px);
-    font-weight: 600;
-  } */
 
 `;
 
@@ -53,7 +48,7 @@ const ProjectSection = styled.div`
     justify-content: center;
     align-items: center;
     place-items: cente; 
-    margin-top: 30px;
+    margin-top: 20px;
     gap: 30px;
-    row-gap: 50px;
+    row-gap: 30px;
 `;

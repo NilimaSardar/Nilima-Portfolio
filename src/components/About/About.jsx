@@ -185,7 +185,15 @@ const AboutSection = styled.div`
     .skills ul li .para {
         font-size: 16px; /* Adjust text size */
     }
-      }
+  }
+
+  @media (max-width: 360px) or (max-height: 740px) {
+        .skills ul li .icon-div {
+            height: 75px;
+            width: 75px;
+            font-size: 40px;
+        }
+  }
 
 `;
 

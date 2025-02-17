@@ -9,7 +9,6 @@ function Footer() {
       "Code is like humor. When you have to explain it, it’s bad. – Cory House",
       "Programming isn’t about what you know; it’s about what you can figure out. – Chris Pine",
       "The best way to get a project done faster is to start sooner. – Jim Highsmith",
-      "Any fool can write code that a computer can understand. Good programmers write code that humans can understand. – Martin Fowler",
     ];
 
   useEffect(()=>{
@@ -21,7 +20,7 @@ function Footer() {
         <div className='quote-section'>
             <h5>Quote of the day</h5>
             <p>"{quote}"</p>
-          </div>
+        </div>
         <p>Created with ReactJS <FaReact fontSize='20px'/> by <span>NILIMA</span></p>
     </FooterPage>
   )
@@ -32,9 +31,11 @@ export default Footer;
 const FooterPage = styled.div`
     width: 100%;
     background-color: #757272a8;
-    color: #555454da;
+    /* color: #555454da; */
+    color: #000000b6;
+    letter-spacing: 0.2px;
     height: 170px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 500;
     display: flex;
     flex-direction: column;
@@ -48,24 +49,42 @@ const FooterPage = styled.div`
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 12px;
   }
   .quote-section h5{
     font-family: "Roboto";
     font-size: 30px;
-    color: #4a4444d9;
+    /* color: #4a4444d9; */
+    color: #f6f6f6;
   }
   .quote-section p{
     font-family: "Roboto";
     font-size: 20px;
-    color: #f1ebebe6;
+    /* color: #f1ebebe6; */
+    color: #f6f6f6;
   }
 
   span{
     font-weight: 600;
-    color: #4a4444d0;
     letter-spacing: 1px;
   }
+  @media (max-width: 360px) or (max-height: 740px) {
+        padding: 60px 0;
+        height: 170px;
 
+        .quote-section{
+          width: 70%;
+          height: auto;
+        }
+
+        .quote-section h5{
+          font-size: 25px;
+        }
+
+        .quote-section p{
+          font-size: 18px;
+        }
+  }
 `;
