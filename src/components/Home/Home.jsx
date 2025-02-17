@@ -49,7 +49,7 @@ const HomePage = styled.div`
         align-items: center;
         padding: 250px 150px 150px 150px;
         height: calc(100vh - 80px);
-
+        animation: fadeIn 1s ease-in;
       }
       .intro{
         line-height: max(4vw, 35px);
@@ -143,7 +143,7 @@ const HomePage = styled.div`
       }
 
 
-      @media (max-width: 360px) or (max-height: 740px) {
+      @media (max-width: 360px) and (max-height: 740px) {
         .main-section {
           padding: 70px 0 0 0; /* Reduce padding for better spacing */
           justify-content: space-between;

@@ -5,8 +5,6 @@ import { SiCss3 } from "react-icons/si";
 import { RiJavascriptFill } from "react-icons/ri";
 import { FaReact } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
-import { MdOutlineFileDownload } from "react-icons/md";
-import Button from '../Home/Button';
 
 function About() {
   return (
@@ -187,7 +185,7 @@ const AboutSection = styled.div`
     }
   }
 
-  @media (max-width: 360px) or (max-height: 740px) {
+  @media (max-width: 360px) and (max-height: 740px) {
         .skills ul li .icon-div {
             height: 75px;
             width: 75px;

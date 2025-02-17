@@ -40,7 +40,7 @@ function Contact() {
   return (
     <ContactSection>
       <h1>&lt;Contact ME/&gt;</h1>
-      <p>Feel free to send me a message!</p>
+      <p className="p">Feel free to send me a message!</p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="input-field">
           <label htmlFor="name">NAME</label>
@@ -53,7 +53,7 @@ function Contact() {
               required: "required*",
               pattern: {
                 value: /^[A-Za-z ]+$/,
-                message: "Only letters & spaces allowed",
+                message: "Only letters allowed",
               },
             })}
           />
@@ -195,7 +195,7 @@ textarea:focus{
 }
 
 @media (max-width: 360px) or (max-height: 740px) {
-    p{
+    .p{
       width: 100%;
       font-size: 18px;
     }
