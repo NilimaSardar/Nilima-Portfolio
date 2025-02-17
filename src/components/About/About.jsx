@@ -15,11 +15,11 @@ function About() {
           <h1>&lt;About ME/&gt;</h1>
           <div className='about-intro'>
             <p>
-              I am BCA student seeking an internship to apply and enhance technical
-              knowledge. Experienced in developing projects like a Typing Speed Test and 
-              a Pet Store platform, with a focus on creating responsive and user-friendly 
-              web applications. Eager to contribute to innovative teams and gain hands-on 
-              industry experience.
+            I enjoy creating things with code! Whether it's designing user-friendly
+            interfaces or solving problems, I love building smooth and interactive
+            web experiences. I'm always curious to learn new things and take on exciting
+            challenges. Would you be interested in teaming up with me to create something
+            amazing? Let’s make something awesome together! 🚀
             </p>
             <p>
             Want to know more about my journey? You can download my Resume by clicking the button below.
