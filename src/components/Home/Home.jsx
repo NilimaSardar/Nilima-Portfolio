@@ -47,7 +47,7 @@ const HomePage = styled.div`
         display: flex;
         justify-content: space-around;
         align-items: center;
-        padding: 200px 150px 150px 150px;
+        padding: 250px 150px 150px 150px;
         height: calc(100vh - 80px);
 
       }
@@ -140,5 +140,16 @@ const HomePage = styled.div`
             .intro ul{
               padding-left: 50px;
             }
+      }
+
+
+      @media (max-width: 360px) and (max-height: 740px) {
+        .main-section {
+          padding: 70px 0 0 0; /* Reduce padding for better spacing */
+          justify-content: space-between;
+        }
+        .down{
+          height: 100px;
+        }
       }
 `;

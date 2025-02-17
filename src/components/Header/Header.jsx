@@ -162,6 +162,9 @@ const HeaderSec = styled.header`
 
 
     @media (max-width: 768px) {
+        .header{
+            padding: 0 3cap;
+        }
         nav .pc{
             display: none;
         }
