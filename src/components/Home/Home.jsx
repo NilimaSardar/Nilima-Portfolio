@@ -145,7 +145,7 @@ const HomePage = styled.div`
 
       @media (max-width: 360px) and (max-height: 740px) {
         .main-section {
-          padding: 70px 0 0 0; /* Reduce padding for better spacing */
+          padding: 70px 0 0 0;
           justify-content: space-between;
         }
         .down{
