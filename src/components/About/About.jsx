@@ -23,7 +23,9 @@ function About() {
             Want to know more about my journey? You can download my Resume by clicking the button below.
             </p>
             <Button_part>
-              <button>Resume</button>
+              <a href="image.png" download="NILIMA-Resume.pdf">
+                <button>Download</button>
+              </a>
             </Button_part>
           </div>
 
