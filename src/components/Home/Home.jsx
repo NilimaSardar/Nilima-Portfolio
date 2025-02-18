@@ -143,7 +143,7 @@ const HomePage = styled.div`
       }
 
 
-      @media (max-width: 360px) and (max-height: 740px) {
+      @media (max-width: 360px) and (max-height: 770px) {
         .main-section {
           padding: 70px 0 0 0;
           justify-content: space-between;
