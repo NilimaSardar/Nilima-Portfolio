@@ -129,7 +129,7 @@ const HomePage = styled.div`
       @media (max-width: 768px) {
           .main-section {
               flex-direction: column-reverse;
-              padding: 30px 0 0 0; /* Reduce padding for better spacing */
+              padding: 60px 0 0 0; /* Reduce padding for better spacing */
               height: auto; /* Adjust height to fit content */
           }
           .intro{
@@ -140,16 +140,5 @@ const HomePage = styled.div`
             .intro ul{
               padding-left: 50px;
             }
-      }
-
-
-      @media (max-width: 360px) and (max-height: 770px) {
-        .main-section {
-          padding: 70px 0 0 0;
-          justify-content: space-between;
-        }
-        .down{
-          height: 100px;
-        }
       }
 `;
