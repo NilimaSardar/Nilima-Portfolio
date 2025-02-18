@@ -129,7 +129,7 @@ const HomePage = styled.div`
       @media (max-width: 768px) {
           .main-section {
               flex-direction: column-reverse;
-              padding: 60px 0 0 0; /* Reduce padding for better spacing */
+              padding: 65px 0 0 0; /* Reduce padding for better spacing */
               height: auto; /* Adjust height to fit content */
           }
           .intro{
